@@ -27,10 +27,11 @@ If you wish to see an Flask - Python example for the same project goto: [FLask P
     cd INRIX_Hack_Client_Server_Demo
     ```
 
-3. **Install Dependencies:**
+2. **Install Dependencies:**
     ```bash
     npm install
     ```
+3. ** !! Make sure to paste your INRIX App_Id and Hash_Token here [utils/authUtils.js](https://github.com/INRIX-Aashay-Motiwala/INRIX_Hack_Client_Server_ExpressJS_Demo/blob/7d80f9365697f304d94968919f1ff3fae205161f/utils/authUtils.js#L5)   
 
 ## Running the Application
 
