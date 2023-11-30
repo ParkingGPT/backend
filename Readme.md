@@ -1,11 +1,14 @@
 # INRIX_Hack_Client_Server_Demo
-This repository will guide you through the process of creating a Flask server/backend app, developing APIs, setting up a frontend Vanilla JavaScript application, and making a simple API call. The goal is to demonstrate how to seamlessly integrate and exchange data between the frontend and backend applications.
+This repository will guide you through the process of creating a ExpressJS server/backend app, developing APIs, setting up a frontend Vanilla JavaScript application, and making a simple API call. The goal is to demonstrate how to seamlessly integrate and exchange data between the frontend and backend applications.
 
 
-# Client Server Flask App - INRIX HACK 2023
+# Client Server ExpressJS App - INRIX HACK 2023
 
 ## Overview
-This repository contains the source code for a Flask web application developed for INRIX HACK 2023. The application serves as a client-server demo example to help you get started with client-server interactions using Flask and Bootstrap.
+This repository contains the source code for a ExpressJS web application developed for INRIX HACK 2023. The application serves as a client-server demo example to help you get started with client-server interactions using ExpressJS and Bootstrap.
+
+## Links
+If you wish to see an Flask - Python example for the same project goto: [FLask Python code example](https://github.com/INRIX/INRIX_Hack_Client_Server_Flask_Demo)
 
 ## Features
 - **Home Page**: A simple home page with Bootstrap styling.
@@ -14,33 +17,26 @@ This repository contains the source code for a Flask web application developed f
   
 
 ## Prerequisites
-- Python 3.x
-- Virtualenv (optional but recommended - helps to download all the libraries required at once)
+- npm & Node
 
 ## Setup Instructions
 
 1. **Clone the Repository:**
     ```bash
-    git clone git@github.com:<YOUR USER NAME>/INRIX_Hack_Client_Server_Demo.git
+    git clone git@github.com:<YOUR USER NAME>/INRIX_Hack_Client_Server_ExpressJS_Demo.git
     cd INRIX_Hack_Client_Server_Demo
-    ```
-
-2. **Create a Virtual Environment (Optional):**
-    ```bash
-    virtualenv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
 
 3. **Install Dependencies:**
     ```bash
-    pip install -r requirements.txt
+    npm install
     ```
 
 ## Running the Application
 
-1. **Start the Flask App:**
+1. **Start the Express App:**
     ```bash
-    python main.py 
+    node main.js
     ```
     Make sure to be in the same directory where you have your main.py file
 
@@ -51,9 +47,9 @@ This repository contains the source code for a Flask web application developed f
     - Click on the "GetToken" link in the navigation bar to fetch and display the API token dynamically.
     
 ## File Structure
-- **app.py:** Flask application script.
-- **templates/:** HTML templates for the web pages.
-- **static/:** Static files (CSS, JS).
+- **main.py:** ExpressJS application script.
+- **views/:** HTML templates for the web pages.
+- **public/:** Static files (CSS, JS).
 ---
 
 **Happy Hacking!**
