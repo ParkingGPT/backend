@@ -53,6 +53,6 @@ If you wish to see an Flask - Python example for the same project goto: [FLask P
 - **public/:** Static files (CSS, JS).
 ---
 
-If you want to learn how to parse a json dataset, look at the json-parser-example.js [here](https://github.com/INRIX-Aashay-Motiwala/INRIX_Hack_Client_Server_ExpressJS_Demo/blob/main/json-parser-example.js)
+If you want to learn how to parse a JSON Dataset, look at the json-parser-example.js [Example](https://github.com/INRIX-Aashay-Motiwala/INRIX_Hack_Client_Server_ExpressJS_Demo/blob/main/json-parser-example.js)
 
 **Happy Hacking!**
