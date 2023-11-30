@@ -8,7 +8,7 @@ This repository will guide you through the process of creating a ExpressJS serve
 This repository contains the source code for a ExpressJS web application developed for INRIX HACK 2023. The application serves as a client-server demo example to help you get started with client-server interactions using ExpressJS and Bootstrap.
 
 ## Links
-If you wish to see an Flask - Python example for the same project goto: [FLask Python code example](https://github.com/INRIX/INRIX_Hack_Client_Server_Flask_Demo)
+If you wish to see an Flask - Python example for the same project goto: [FLask Python code example](https://github.com/INRIX-Aashay-Motiwala/INRIX_Hack_Client_Server_Demo)
 
 ## Features
 - **Home Page**: A simple home page with Bootstrap styling.
