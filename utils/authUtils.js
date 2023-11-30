@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const HASH_TOKEN = '';
-const APP_ID = '';
+const HASH_TOKEN = 'PASTE YOUR HASH TOKEN HERE';
+const APP_ID = 'PASTE YOUR APP ID HERE';
 const TOKEN_URL = 'https://api.iq.inrix.com/auth/v1/appToken';
 
 // Define a route for the '/getToken' endpoint
