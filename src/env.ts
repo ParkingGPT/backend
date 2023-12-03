@@ -7,4 +7,6 @@ export namespace Env {
     export const GoogleKeyRyan: string = '__key__';
     export const OPENAI_API_KEY: string = '__key__'
     export let CHAT_INIT_PROMPT: string = "Hello JSON"
+    export const INRIX_APP_ID: string = '__id__';
+    export const INRIX_APP_KEY: string = '___key___';
 }

@@ -40,7 +40,7 @@ export class MapService {
             const headers = {
                 'X-Goog-Api-Key': Env.GoogleKey,
                 'X-Goog-FieldMask': 'name,displayName,rating'
-              };
+            };
 
             // Make the HTTP GET request to the INRIX Lots API
             const response = await axios.get(apiUrl, {headers: headers});

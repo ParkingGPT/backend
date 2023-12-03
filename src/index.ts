@@ -4,10 +4,10 @@ import { Env } from "./env";
 import InrixRoute from "./route/inrix";
 import MapRoute from "./route/map";
 import ChatRoute from "./route/chat";
-import fs from 'fs';
-import path from 'path';
+//import fs from 'fs';
+//import path from 'path';
 
-Env.CHAT_INIT_PROMPT = fs.readFileSync(path.resolve(__dirname, './prompts/init.txt'), 'utf8').trim();
+//Env.CHAT_INIT_PROMPT = fs.readFileSync(path.resolve(__dirname, './prompts/init.txt'), 'utf8').trim();
 
 
 // Configure and start the HTTP server.
