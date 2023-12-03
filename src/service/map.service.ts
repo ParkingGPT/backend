@@ -68,4 +68,25 @@ export class MapService {
             throw new Error(`Error requesting Google placeRating API: ${error}`);
         }
     }
+
+    async placeReview(data: dto.PlaceReviewGetParams): Promise<any> {
+        try {
+            // Construct the API endpoint URL with the validated parameters
+            const apiUrl = `https://places.googleapis.com/v1/places/${data.id}`;
+
+            const headers = {
+                'X-Goog-Api-Key': 'AIzaSyA2u20sWlyegjffHklTECJtqS-DqDj8fAI',
+                'X-Goog-FieldMask': 'name,displayName,reviews'
+              };
+
+            // Make the HTTP GET request to the INRIX Lots API
+            const response = await axios.get(apiUrl, {headers: headers});
+
+            // Return the response data
+            return response.data;
+        } catch (error) {
+            // Handle API request error
+            throw new Error(`Error requesting Google placeRating API: ${error}`);
+        }
+    }
 }

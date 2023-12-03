@@ -38,3 +38,11 @@ export const StreetViewGetParamsSchema = Joi.object({
     size: Joi.string().required(),
     key: Joi.string().required()
 });
+
+export interface PlaceReviewGetParams {
+    id: string
+}
+
+export const PlaceReviewGetParamsSchema = Joi.object({
+    id: Joi.string().required()
+});

@@ -3,4 +3,5 @@ export namespace Env {
     export const DEBUG: boolean = true;
     export const PORT: number = 5050;
     export const HOST: string = "localhost";
+    export const GoogleKeyRyan: string = 'AIzaSyA2u20sWlyegjffHklTECJtqS-DqDj8fAI';
 }

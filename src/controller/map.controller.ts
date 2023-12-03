@@ -52,4 +52,15 @@ export class MapController {
             res.status(200).json(result)
         }
     }
+
+    public placeReview = async (req: Request, res: Response) => {
+        const {error, value} = dto.PlaceReviewGetParamsSchema.validate(req.query);
+        if (error) {
+            res.status(400).send("Invalid parameters: " + error.message);
+        }
+        else{
+            const result = await this.mapService.placeReview(value);
+            res.status(200).json(result)
+        }
+    }
 }
