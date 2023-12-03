@@ -1,5 +1,7 @@
 import axios from 'axios';
 import * as dto from "../models/dto/map.dto"
+import { Env } from '../env';
+
 export class MapService {
     async test(): Promise<any> {
         // input = input.toLowerCase();
@@ -12,8 +14,8 @@ export class MapService {
             const apiUrl = `https://places.googleapis.com/v1/places:searchText`;
 
             const headers = {
-                'X-Goog-Api-Key': 'AIzaSyA2u20sWlyegjffHklTECJtqS-DqDj8fAI',
-                'X-Goog-FieldMask': 'places.displayName,places.formattedAddress,places.id'
+                'X-Goog-Api-Key': Env.GoogleKey,
+                'X-Goog-FieldMask': 'places.displayName,places.formattedAddress,places.id,places.location'
               };
             const req_data = {
                 'textQuery': data.text
@@ -36,7 +38,7 @@ export class MapService {
             const apiUrl = `https://places.googleapis.com/v1/places/${data.id}`;
 
             const headers = {
-                'X-Goog-Api-Key': 'AIzaSyA2u20sWlyegjffHklTECJtqS-DqDj8fAI',
+                'X-Goog-Api-Key': Env.GoogleKey,
                 'X-Goog-FieldMask': 'name,displayName,rating'
               };
 
@@ -75,7 +77,7 @@ export class MapService {
             const apiUrl = `https://places.googleapis.com/v1/places/${data.id}`;
 
             const headers = {
-                'X-Goog-Api-Key': 'AIzaSyA2u20sWlyegjffHklTECJtqS-DqDj8fAI',
+                'X-Goog-Api-Key': Env.GoogleKey,
                 'X-Goog-FieldMask': 'name,displayName,reviews'
               };
 
@@ -89,4 +91,5 @@ export class MapService {
             throw new Error(`Error requesting Google placeRating API: ${error}`);
         }
     }
+
 }

@@ -63,4 +63,6 @@ export class MapController {
             res.status(200).json(result)
         }
     }
+
+
 }
