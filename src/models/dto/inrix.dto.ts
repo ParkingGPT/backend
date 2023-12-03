@@ -8,7 +8,7 @@ export interface InrixGetParams {
 }
 
 export const inrixGetParamsSchema = Joi.object({
-    point: Joi.string().required(),
+    point: Joi.string().optional(),
     radius: Joi.number().required(),
     entry_time: Joi.string().required(),
     duration: Joi.number().required()
