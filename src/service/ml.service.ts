@@ -1,25 +1,25 @@
 import axios from 'axios';
 import * as dto from "../models/dto/ml.dto"
-import { Env } from '../env';
+//import { Env } from '../env';
 
 export class MLService{
   async ML(data: dto.MLGetParams): Promise<any> {
     try {
 
-        const apiUrl = `https://localhost:5051/predict`;
+        const apiUrl = `https://localhost:5001/predict`;
         // ?pct=${data.pct}&probability=${data.probability}&available=${data.available}&distance=${data.distance}&price=${data.price}&stars=${data.stars}&construction=${data.construction}&events=${data.events}&congestion=${data.congestion}&hazards=${data.hazards}
 
         const req_data = {
-          'pct': data.pct,
-          'probability': data.probability,
-          'available': data.available,
-          'distance': data.distance,
-          'price': data.price,
-          'stars': data.stars,
-          'construction': data.construction,
-          'events': data.events,
-          'congestion': data.congestion,
-          'hazards': data.hazards,
+          "pct": data.pct,
+          "probability": data.probability,
+          "available": data.available,
+          "distance": data.distance,
+          "price": data.price,
+          "stars": data.stars,
+          "construction": data.construction,
+          "events": data.events,
+          "congestion": data.congestion,
+          "hazards": data.hazards,
         }
         const response = await axios.post(apiUrl, req_data);
 
