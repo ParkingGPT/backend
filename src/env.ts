@@ -4,4 +4,6 @@ export namespace Env {
     export const PORT: number = 5050;
     export const HOST: string = "localhost";
     export const GoogleKeyRyan: string = 'AIzaSyA2u20sWlyegjffHklTECJtqS-DqDj8fAI';
+    export const OPENAI_API_KEY: string = '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'
+    export let CHAT_INIT_PROMPT: string = "Hello JSON"
 }

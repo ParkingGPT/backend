@@ -2,7 +2,6 @@ import axios from 'axios';
 import * as dto from "../models/dto/inrix.dto"
 export class InrixService {
     async lots(data:dto.InrixGetParams): Promise<any> {
-        // input = input.toLowerCase();
         try {
             // Construct the API endpoint URL with the validated parameters
             const apiUrl = `https://api.iq.inrix.com/lots/v3?point=${data.point}&radius=${data.radius}&entry_time=${data.entry_time}&duration=${data.duration}`;
@@ -16,7 +15,5 @@ export class InrixService {
             // Handle API request error
             throw new Error(`Error requesting INRIX Lots API: ${error}`);
         }
-
-
     }
 }

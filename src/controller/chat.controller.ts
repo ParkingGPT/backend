@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { ChatService } from '../service/chat.service';
+import * as dto from "../models/dto/chat.dto"
 
 export class ChatController {
     private chatService: ChatService;
@@ -8,13 +9,16 @@ export class ChatController {
         this.chatService = new ChatService();
     }
 
-    public processUserInput = async (req: Request, res: Response) => {
+    public chat = async (req: Request, res: Response) => {
         try {
-            const input = req.body.input;
-            const result = await this.chatService.processInput(input);
-            res.json(result);
+            const { error, value } = dto.chatPostParamsSchema.validate(req.body);
+            if (error) { 
+                return res.status(400).send(error);
+            }
+            const result = await this.chatService.chat(value);
+            return res.json(result);
         } catch (error) {
-            res.status(500).send(error);
+            return res.status(500).send(error);
         }
     };
 }
