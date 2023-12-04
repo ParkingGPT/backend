@@ -13,14 +13,14 @@ export interface MLGetParams{
 }
 
 export const MLGetParamsSchema = Joi.object({
-  pct: Joi.number().optional(),
-  probability: Joi.number().optional(),
-  available: Joi.number().optional(),
-  distance: Joi.number().optional(),
-  price: Joi.number().optional(),
-  stars: Joi.number().optional(),
-  construction: Joi.number().optional(),
-  events: Joi.number().optional(),
-  congestion: Joi.number().optional(),
-  hazards: Joi.number().optional(),
+  pct: Joi.number().required(),
+  probability: Joi.number().required(),
+  available: Joi.number().required(),
+  distance: Joi.number().required(),
+  price: Joi.number().required(),
+  stars: Joi.number().required(),
+  construction: Joi.number().required(),
+  events: Joi.number().required(),
+  congestion: Joi.number().required(),
+  hazards: Joi.number().required(),
 });

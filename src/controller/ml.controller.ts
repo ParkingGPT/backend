@@ -12,12 +12,12 @@ export class MLController {
 
 
 public ML = async (req: Request, res: Response) => {
-  const {error, value} = dto.MLGetParamsSchema.validate(req.query);
-  logger.info(req.query)
+  logger.info(req)
+  const {error, value} = dto.MLGetParamsSchema.validate(req.body);
   if(error){
       logger.error(error)
       res.status(400).send("Invalid parameters: " + error.message);
-  }else{
+  } else {
       const result = await this.mlService.ML(value);
       res.status(200).json(result)
   }

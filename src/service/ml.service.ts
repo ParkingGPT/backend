@@ -1,6 +1,5 @@
 import axios from 'axios';
 import * as dto from "../models/dto/ml.dto"
-//import { Env } from '../env';
 
 export class MLService{
   async ML(data: dto.MLGetParams): Promise<any> {
@@ -18,7 +17,7 @@ export class MLService{
           "events": data.events,
           "congestion": data.congestion,
           "hazards": data.hazards,
-        }
+    }
         const response = await axios.post(apiUrl, req_data);
 
         const prediction = response.data.prediction;
