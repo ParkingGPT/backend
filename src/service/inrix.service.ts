@@ -13,7 +13,6 @@ export class InrixService {
             const response = await axios.get(apiUrl);
 
             this.token = "Bearer " + response.data.result.token;
-            console.log(this.token)
         }
         catch (error){
             throw new Error(`Error requesting Inrix auth API: ${error}`);
@@ -32,31 +31,29 @@ export class InrixService {
                 'Authorization': this.token,
             };
 
-            console.log(headers);
 
-            let result:ParkingLot[] = [];
+            let result:dto.ParkingLotPredictParams[] = [];
 
             // Make the HTTP GET request to the INRIX Lots API
             const response = await axios.get(apiUrl, {headers: headers});
 
-            console.log(response);
-
             const lots = response.data.result;
             for (let i = 0; i < lots.length; i++) {
-                let lot : ParkingLot = {
-                    pct: 0,
-                    probability: 0,
-                    available: 0,
-                    distance: 0,
-                    price: 0, // costindex
-                    stars: 0 // reviewScore
+                const { error, value } = dto.ParkingLotSchema.validate(lots[i]);
+                if (error) {
+                    console.log(lots[i]);
+                    continue;
+                }
+                let lot: dto.ParkingLotPredictParams = {
+                    name: value.name,
+                    address: value.buildingAddress,
+                    pct: value.occupancy.pct,
+                    probability: value.occupancy.probability,
+                    available: value.occupancy.available,
+                    distance: value.distance,
+                    price: value.costIndex == null ? -1 : value.costIndex,
+                    stars: value.reviewScore == null ? -1 : value.reviewScore,
                 };
-                lot.pct = lots[i].occupancy.pct;
-                lot.probability = lots[i].occupancy.probability;
-                lot.available = lots[i].occupancy.available;
-                lot.distance = lots[i].distance;
-                lot.price = lots[i].costIndex !== null ? lots[i].costIndex : -1;
-                lot.stars = lots[i].reviewScore !== null ? lots[i].reviewScore : -1;
                 result.push(lot);
             }
 
@@ -85,7 +82,7 @@ export class InrixService {
             let result:IncidentOutput = {
                 construction : 0,
                 events: 0,
-                cogestion: 0,
+                congestion: 0,
                 hazards: 0
             };
             const response = await axios.get(apiUrl, {headers: headers});
@@ -99,7 +96,7 @@ export class InrixService {
                         result.events += parseInt(incident.severity);
                         break;
                     case "3":
-                        result.cogestion += parseInt(incident.severity);
+                        result.congestion += parseInt(incident.severity);
                         break;
                     case "4":
                         result.hazards += parseInt(incident.severity);
@@ -119,15 +116,6 @@ export class InrixService {
 export interface IncidentOutput{
     construction : number;
     events: number;
-    cogestion: number;
+    congestion: number;
     hazards: number;
-}
-
-export interface ParkingLot{
-    pct:number;
-    probability:number;
-    available:number;
-    distance:number;
-    price:number; // costindex
-    stars:number; // reviewScore
 }
