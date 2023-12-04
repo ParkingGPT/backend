@@ -54,7 +54,7 @@ export class MapController {
     }
 
     public placeReview = async (req: Request, res: Response) => {
-        const {error, value} = dto.PlaceReviewGetParamsSchema.validate(req.query);
+        const { error, value } = dto.PlaceReviewGetParamsSchema.validate(req.body);
         if (error) {
             res.status(400).send("Invalid parameters: " + error.message);
         }
