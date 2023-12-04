@@ -5,9 +5,7 @@ import * as dto from "../models/dto/ml.dto"
 export class MLService{
   async ML(data: dto.MLGetParams): Promise<any> {
     try {
-
-        const apiUrl = `https://localhost:5001/predict`;
-        // ?pct=${data.pct}&probability=${data.probability}&available=${data.available}&distance=${data.distance}&price=${data.price}&stars=${data.stars}&construction=${data.construction}&events=${data.events}&congestion=${data.congestion}&hazards=${data.hazards}
+        const apiUrl = `http://localhost:5051/predict`;
 
         const req_data = {
           "pct": data.pct,
@@ -28,7 +26,7 @@ export class MLService{
         return {'prediction': prediction};
     }
     catch (error){
-        throw new Error(`Error requesting Inrix auth API: ${error}`);
+        throw new Error(`Error requesting Prediction API: ${error}`);
     }
 }
 }

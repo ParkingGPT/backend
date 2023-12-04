@@ -23,9 +23,10 @@ export class InrixService {
         // input = input.toLowerCase();
         // try {
             const point = encodeURIComponent(data.point);
-            // Construct the API endpoint URL with the validated parameters
+        // Construct the API endpoint URL with the validated parameters
+
             const apiUrl =
-            `https://api.iq.inrix.com/lots/v3?point=${point}&radius=${data.radius}&entry_time=${data.entry_time}&duration=${data.duration}`;
+            `https://api.iq.inrix.com/lots/v3?point=${point}&radius=${data.radius}`;
 
             const headers = {
                 'Authorization': this.token,

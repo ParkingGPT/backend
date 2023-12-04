@@ -11,8 +11,7 @@ export const chatPostParamsSchema = Joi.object({
     messages: Joi.array().items(Joi.object({
         role: Joi.string().required(),
         content: Joi.string().required()
-    })).required(),
-    type: Joi.string().required()
+    })).required()
 });
 
 export interface ChatMessage {

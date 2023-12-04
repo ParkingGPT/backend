@@ -1,7 +1,3 @@
-// route
-// getStreetView
-// getScore
-// getReview
 import express from 'express';
 import { MapController } from '../controller/map.controller';
 

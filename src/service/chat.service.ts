@@ -15,6 +15,6 @@ export class ChatService {
         }
         const result = await axios.post(apiUrl, data, { headers: headers });
         const content = result.data['choices'][0]['message']['content']
-        return { response: content };
+        return content;
     }
 }
